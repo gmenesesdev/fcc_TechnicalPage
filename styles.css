@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+  --fuente-principal: "Roboto", sans-serif;
+  /* --fuente-secundaria: "Roboto Condensed", sans-serif; */
+  --fuente-secundaria: 'Source Sans Pro', sans-serif;
+  --background-color-main: rgb(35, 41, 49);
+  --backgroun-color-navbar: rgb(45, 54, 65);
+  --comment-color: rgb(98, 114, 164);
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  background-color: var(--background-color-main);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin: 0;
+  width: auto;
+  display: block;
+}
+
+#navbar {
+  margin: 0;
+  padding: 0;
+  width: 25rem;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  border-right: 1px solid black;
+  background-color: var(--backgroun-color-navbar);
+  color: white;
+}
+
+#navbar header {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#main-doc {
+  margin-left: 25rem;
+  padding: 2rem;
+  color: white;
+}
+
+nav > ul {
+  padding: 0;
+}
+
+nav > ul > li {
+  position: relative;
+  list-style: none;
+  padding: 1rem 0 1rem 2rem;
+  border-top: 1px solid;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: white;
+}
+
+p {
+  text-align: justify;
+  width: 100%;
+}
+
+pre {
+  background-color: rgb(12, 44, 65);
+  padding: 0;
+  margin-left: 5rem;
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  white-space: pre-line;
+  padding: 1rem;
+}
+
+pre > code {
+  margin-left: 1rem;
+  font-family: var(--fuente-secundaria);
+}
+
+section > header {
+  font-size: 2rem;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+p > a {
+  text-decoration: none;
+  color: yellowgreen;
+}
+
+span {
+  color: var(--comment-color);
+}
+
+@media screen and (max-width: 768px) {
+  #navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-height: 25rem;
+    z-index: 1;
+    text-align: center;
+    transition: top 0.3s;
+  }
+
+  #navbar header {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  #navbar > ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-size: 1.3rem;
+  }
+
+  nav > ul > li {
+    padding: 0.1rem;
+  }
+
+  #main-doc {
+    width: auto;
+    margin: auto;
+    margin-top: 26rem;
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  .main-section:before {
+    display: block;
+    height: 25rem;
+    margin-top: -25rem;
+    visibility: hidden;
+    content: "";
+  }
+
+  pre {
+    margin: auto;
+    width: auto;
+  }
+
+  pre > code {
+    margin-left: 0.5rem;
+    font-size: 1.1rem;
+  }
+}
